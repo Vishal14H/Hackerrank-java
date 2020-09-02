@@ -1,0 +1,24 @@
+import java.util.Scanner;
+ 
+public class BonAppétit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int items[] = new int[n];
+        int annaTotal=0;
+ 
+        for(int i=0;i<n;i++){
+            items[i] = sc.nextInt();
+            if(k!=i){
+                annaTotal += items[i];
+            }
+        }
+        int chargedItem = sc.nextInt();
+        if((annaTotal/2)==chargedItem){
+            System.out.println("Bon Appetit");
+        }else{
+            System.out.println(chargedItem-(annaTotal/2));
+        }    
+    }
+}
