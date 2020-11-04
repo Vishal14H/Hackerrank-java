@@ -1,0 +1,52 @@
+ import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+      
+        Scanner sc= new Scanner(System.in);
+        int numberOfLines = sc.nextInt();
+        String line ="";
+        int count=0;
+       
+        while(numberOfLines-- >=0)
+        {
+          line+=(" "+sc.nextLine()); 
+        }
+        int numberOfTestCases=sc.nextInt();
+       
+       
+        while(numberOfTestCases-- >=0)
+        {
+          
+            String americanword =sc.nextLine();
+            count=0;
+            Pattern ra = Pattern.compile(americanword);
+            String pattern = americanword.replace("z","s");
+       
+            if(!pattern.equals(""))
+            {
+            Pattern rb = Pattern.compile(pattern);
+         
+          Matcher ma = ra.matcher(line);
+           Matcher mb = rb.matcher(line);
+             
+              while(ma.find())
+              {
+                 count++;
+              }
+              while(mb.find())
+              {
+                 count++;
+              }
+                System.out.println(count);
+            }
+           
+        }
+      
+    }
+}
